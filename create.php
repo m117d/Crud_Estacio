@@ -1,17 +1,23 @@
 <?php
 require 'db.php';
+
+// Seleciona os tipos de mídia para preencher o dropdown
+$stmt = $pdo->query('SELECT id, tipo FROM tipo_midia');
+$tipos_midia = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $media_type = $_POST['media_type'];
-    $title = $_POST['title'];
+    $tipo_id = $_POST['tipo_id'];
+    $nome = $_POST['nome'];
     $status = $_POST['status'];
-    $description = $_POST['description'];
-    $release_year = $_POST['release_year'];
-    $genre = $_POST['genre'];
-    
-    $stmt = $pdo->prepare('INSERT INTO items (media_type, title, status, description, release_year, genre) VALUES (?, ?, ?, ?, ?, ?)');
-    $stmt->execute([$media_type, $title, $status, $description, $release_year, $genre]);
-    
+
+    // Insere os dados no banco de dados
+    $stmt = $pdo->prepare('INSERT INTO midia (tipo_id, nome, status) VALUES (?, ?, ?)');
+    $stmt->execute([$tipo_id, $nome, $status]);
+
+    // Redireciona para a página inicial após a inserção
     header('Location: index.php');
+    exit();
 }
 ?>
 <!DOCTYPE html>
@@ -19,40 +25,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Adicionar Novo Item</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Adicionar Novo Item</h1>
-    <form method="post">
-        <label for="media_type">Tipo de Mídia:</label>
-        <select id="media_type" name="media_type" required>
-            <option value="Filme">Filme</option>
-            <option value="Serie">Série</option>
-            <option value="Desenho">Desenho</option>
-        </select>
-        <br>
-        <label for="title">Nome da Mídia:</label>
-        <input type="text" id="title" name="title" required>
-        <br>
-        <label for="status">Status:</label>
-        <select id="status" name="status" required>
-            <option value="Assistida">Assistida</option>
-            <option value="Não Assistida">Não Assistida</option>
-            <option value="Em Andamento">Em Andamento</option>
-            <option value="Terminada">Terminada</option>
-        </select>
-        <br>
-        <label for="description">Descrição:</label>
-        <textarea id="description" name="description"></textarea>
-        <br>
-        <label for="release_year">Ano de Lançamento:</label>
-        <input type="number" id="release_year" name="release_year">
-        <br>
-        <label for="genre">Gênero:</label>
-        <input type="text" id="genre" name="genre">
-        <br>
-        <button type="submit">Salvar</button>
-    </form>
-    <a href="index.php">Voltar</a>
+    <div class="container">
+        <h1>Adicionar Novo Item</h1>
+        <form method="post">
+            <label for="tipo_id">Tipo de Mídia</label>
+            <select id="tipo_id" name="tipo_id" required>
+                <?php foreach ($tipos_midia as $tipo): ?>
+                    <option value="<?= htmlspecialchars($tipo['id'], ENT_QUOTES, 'UTF-8') ?>">
+                        <?= htmlspecialchars($tipo['tipo'], ENT_QUOTES, 'UTF-8') ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            
+            <label for="nome">Nome da Mídia</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+                <option value="Assistida">Assistida</option>
+                <option value="Não Assistida">Não Assistida</option>
+                <option value="Em Andamento">Em Andamento</option>
+                <option value="Terminada">Terminada</option>
+            </select>
+            
+            <button type="submit">Salvar</button>
+        </form>
+        <a href="index.php">Voltar</a>
+    </div>
 </body>
 </html>
