@@ -10,8 +10,11 @@ Banco de Dados: PostgreSQL
 
 Estrutura dos Arquivos:
 index.php: Script para a tela inicial.
+
 create.php: Script para a tela de criação de dados.
+
 update.php: Script para atualizar os dados.
+
 delete.php: Script para deletar os dados.
 
 Configuração:
