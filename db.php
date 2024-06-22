@@ -2,8 +2,8 @@
 // Arquivo de configuração do banco de dados
 $host = 'localhost'; // Host do banco de dados
 $dbname = 'Estacio'; // Nome do banco de dados
-$username = 'postgres'; 
-$password = '2510@';
+$username = 'postgres'; // Usuário do banco de dados
+$password = '2510@'; // Senha do banco de dados
 
 $dsn = "pgsql:host=$host;dbname=$dbname;";
 
