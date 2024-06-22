@@ -1,4 +1,4 @@
-Este é um projeto desenvolvido como parte das atividades acadêmicas na Universidade Estácio. Trata-se de uma aplicação CRUD (Create, Read, Update, Delete) implementada em PHP.
+Este é um projeto desenvolvido como parte das atividades acadêmicas na Universidade Estácio. Trata-se de uma aplicação CRUD implementada em PHP.
 
 Descrição do Projeto:
 O tema escolhido para este projeto é Gestão de Mídia, permitindo que os usuários organizem e gerenciem seus filmes, séries e desenhos assistidos de forma eficiente.
