@@ -18,61 +18,6 @@ try {
     <title>Lista de Mídias</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            width: 80%;
-            max-width: 800px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        a {
-            margin: 10px;
-            display: inline-block;
-            text-decoration: none;
-            color: #007BFF;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            background-color: #f9f9f9;
-            margin: 10px 0;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        li a {
-            margin-right: 10px;
-        }
-        li p {
-            margin: 5px 0 0;
-            color: #555;
-        }
-        @media (max-width: 768px) {
-            .container {
-                width: 100%;
-                padding: 10px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">

@@ -1,34 +1,91 @@
+/* assets/css/style.css */
+
+/* Estilos globais */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
+/* Estilos para o container */
+.container {
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Ajuste opcional para espaçamento */
+}
+
+/* Estilos para o título */
 h1 {
-    color: #333;
+    text-align: center;
 }
 
-form {
-    margin: 20px 0;
-}
-
-label {
+/* Estilos para os formulários e botões */
+label, select, input, button {
     display: block;
-    margin: 5px 0;
-}
-
-input, textarea, select {
     width: 100%;
-    padding: 8px;
-    margin: 5px 0 10px 0;
+    margin-bottom: 10px;
 }
 
 button {
-    padding: 10px 15px;
     background-color: #007BFF;
     color: #fff;
+    padding: 10px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Estilos para os links */
+a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para a lista de itens */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+li a {
+    margin-right: 10px;
+}
+
+li p {
+    margin: 5px 0 0;
+    color: #555;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
 }

@@ -45,29 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Editar Item</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Adicionando o estilo CSS externo -->
-    <style>
-        /* Estilos específicos para a página de edição */
-        body {
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            width: 80%;
-            max-width: 800px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px; /* Ajuste opcional para espaçamento */
-        }
-        h1 {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
