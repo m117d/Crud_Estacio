@@ -27,9 +27,9 @@ try {
             <?php if (!empty($items)): ?>
                 <?php foreach ($items as $item): ?>
                     <li>
-                        <a href="read.php?id=<?= htmlspecialchars($item['id'], ENT_QUOTES, 'UTF-8') ?>">
+                        <span>
                             <?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?> (<?= htmlspecialchars($item['media_type'], ENT_QUOTES, 'UTF-8') ?>)
-                        </a>
+                        </span>
                         <a href="update.php?id=<?= htmlspecialchars($item['id'], ENT_QUOTES, 'UTF-8') ?>">Editar</a>
                         <a href="delete.php?id=<?= htmlspecialchars($item['id'], ENT_QUOTES, 'UTF-8') ?>" onclick="return confirm('Tem certeza que deseja deletar este item?')">Deletar</a>
                         <p>Status: <?= htmlspecialchars($item['status'], ENT_QUOTES, 'UTF-8') ?></p>
